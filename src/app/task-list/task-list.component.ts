@@ -9,11 +9,18 @@ import { ToDo } from '../models/to-do.model';
 export class TaskListComponent {
   @Input() childToDoList: ToDo[];
   @Output() viewClickSender = new EventEmitter();
+  @Output() editClickSender = new EventEmitter();
 
 
   viewClicked(clickedToDo: ToDo){
     this.viewClickSender.emit(clickedToDo);
   }
+
+  editClicked(clickedToDo: ToDo) {
+    this.editClickSender.emit(clickedToDo);
+  }
+
+
 
   constructor() { }
 
