@@ -10,6 +10,16 @@ export class AppComponent {
   title = 'Weather Or Not';
   masterToDo: ToDo[] = [
     new ToDo("Sky Diving", "Go to the drop-zone and jump out", "raining", 38, false),
-    new ToDo("Study", "Go to the library and read and write Code", "raining", 38, false)
+    new ToDo("Study", "Go to the library and read and write Code", "raining", 38, true),
+    new ToDo("Walk the Dog", "Take Fido around the block", "raining", 38, false)
   ];
+
+  selectedViewToDo: ToDo
+
+  viewToDoClicked(clickedViewToDo) {
+    this.selectedViewToDo = clickedViewToDo;
+  }
+
+
+
 }
