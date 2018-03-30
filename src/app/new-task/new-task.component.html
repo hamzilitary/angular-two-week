@@ -1,0 +1,10 @@
+<form class="newTask" action="index.html" method="post">
+  <label for="task-form"></label>
+  <input #newTask placeholder="task">
+  <input #newDescription placeholder="description">
+  <input #newConditions placeholder="conditions">
+  <input #newTemperature placeholder="temperature">
+  <button (click)="create(newTask.value, newDescription.value, newConditions.value, newTemperature.value); newTask.value=''; newDescription.value=''; newConditions.value=''; newTemperature.value='';">Add Task</button>
+
+
+</form>
