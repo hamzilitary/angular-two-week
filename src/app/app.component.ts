@@ -15,9 +15,26 @@ export class AppComponent {
   ];
 
   selectedViewToDo: ToDo
+  selectedEditToDo: ToDo
 
   viewToDoClicked(clickedViewToDo) {
     this.selectedViewToDo = clickedViewToDo;
+  }
+
+  finishViewing() {
+    this.selectedViewToDo = null;
+  }
+
+  editToDoClicked(clickedEditToDo) {
+    this.selectedEditToDo = clickedEditToDo;
+  }
+
+  finishEditing() {
+    this.selectedEditToDo = null;
+  }
+
+  newToDo(newToDo) {
+    this.masterToDo.push(newToDo);
   }
 
 
