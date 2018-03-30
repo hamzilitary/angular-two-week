@@ -6,5 +6,5 @@
 
 <app-task-list [childToDoList]="masterToDo" (viewClickSender)="viewToDoClicked($event)" (editClickSender)="editToDoClicked($event)"></app-task-list>
 <app-edit-task [childEditToDo]="selectedEditToDo" (clickedDone)="finishEditing()"></app-edit-task>
-<app-view-task [childViewToDo]="selectedViewToDo" (clickedDoneView)="finishViewing()"</app-view-task>
+<app-view-task [childViewToDo]="selectedViewToDo" (clickedDoneView)="finishViewing()"></app-view-task>
 <app-new-task (createdSender)="newToDo($event)"></app-new-task>

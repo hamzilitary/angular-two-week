@@ -10,6 +10,7 @@ export class TaskListComponent {
   @Input() childToDoList: ToDo[];
   @Output() viewClickSender = new EventEmitter();
   @Output() editClickSender = new EventEmitter();
+  filterBySuggest: string = "allTasks";
 
 
   viewClicked(clickedToDo: ToDo){
@@ -18,6 +19,14 @@ export class TaskListComponent {
 
   editClicked(clickedToDo: ToDo) {
     this.editClickSender.emit(clickedToDo);
+  }
+
+  onChange(optionFromMenu) {
+    this.filterBySuggest = optionFromMenu;
+  }
+
+  toggleSuggest(clickedToDo: ToDo, setSuggest: boolean) {
+    clickedToDo.suggest = setSuggest;
   }
 
 
