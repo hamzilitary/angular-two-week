@@ -1,3 +1,10 @@
-<p>
-  task-list works!
-</p>
+<div *ngIf="childViewToDo"> The Task At Hand!
+
+<h3>{{childViewToDo.task}}</h3>
+<h3>View Task</h3>
+<p>{{childViewToDo.task}}</p>
+<p>{{childViewToDo.description}}</p>
+<p>{{childViewToDo.conditions}}</p>
+<p>{{childViewToDo.temperature}}</p>
+<button (click)="finishViewing()">DoneZO!</button>
+</div>
