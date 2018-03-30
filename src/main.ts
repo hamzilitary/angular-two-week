@@ -9,3 +9,6 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule);
+
+let request = new XMLHttpRequest();
+let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f41bec18f9c4fb89d5f3987aac74166d`
