@@ -4,7 +4,8 @@
   <input #newDescription placeholder="description">
   <input #newConditions placeholder="conditions">
   <input #newTemperature placeholder="temperature">
-  <button (click)="create(newTask.value, newDescription.value, newConditions.value, newTemperature.value); newTask.value=''; newDescription.value=''; newConditions.value=''; newTemperature.value='';">Add Task</button>
+  <input #newSuggest placeholder="suggest override">
+  <button (click)="create(newTask.value, newDescription.value, newConditions.value, newTemperature.value, newSuggest.value); newTask.value=''; newDescription.value=''; newConditions.value=''; newTemperature.value=''; newSuggest.value='';">Add Task</button>
 
 
 </form>
