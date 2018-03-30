@@ -1,4 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: salmon;
+  background: url('https://i.ytimg.com/vi/v7soFZCMKJc/maxresdefault.jpg');
+  background-repeat: no-repeat;
+
+
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+}
+
+h3 {
+  text-align: center;
+
+}
+p {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+ol {
+  text-align: center;
+}
+
+app-root {
+  text-align: center;
+}
+select {
+  text-align: center;
 }
