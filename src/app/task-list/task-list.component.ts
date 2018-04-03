@@ -1,5 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ToDo } from '../models/to-do.model';
+import {TaskService} from '../task.service'
+
 
 @Component({
   selector: 'app-task-list',
@@ -27,11 +29,12 @@ export class TaskListComponent {
 
   toggleSuggest(clickedToDo: ToDo, setSuggest: boolean) {
     clickedToDo.suggest = setSuggest;
+    this.svc.getTasks().subscribe((t) => console.log(t));
   }
 
 
 
-  constructor() { }
+  constructor(private svc:TaskService) { }
 
 
 

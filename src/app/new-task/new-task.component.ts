@@ -10,7 +10,8 @@ export class NewTaskComponent  {
   @Output() createdSender = new EventEmitter();
 
   create(task: string, description: string, conditions: string, temperature: string, suggest: boolean) {
-    let newToDo = new ToDo(task, description, conditions, parseInt(temperature), suggest)
+    let newToDo = new ToDo(task, description, conditions, parseInt(temperature), suggest);
+    //this.taskService.create(ToDo);
     this.createdSender.emit(newToDo);
   }
 

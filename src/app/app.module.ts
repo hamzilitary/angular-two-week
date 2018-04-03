@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NotSuggestedPipe} from './not-suggested.pipe';
 import { SuggestedPipe} from './suggested.pipe';
@@ -8,6 +9,7 @@ import { ViewTaskComponent } from './view-task/view-task.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { NewTaskComponent } from './new-task/new-task.component';
+import {TaskService} from './task.service'
 
 @NgModule({
   declarations: [
@@ -21,9 +23,9 @@ import { NewTaskComponent } from './new-task/new-task.component';
   imports: [
     BrowserModule,
     FormsModule,
-
+    HttpClientModule
   ],
-  providers: [],
+  providers: [TaskService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
