@@ -6,9 +6,10 @@ import { NotSuggestedPipe} from './not-suggested.pipe';
 import { SuggestedPipe} from './suggested.pipe';
 import { AppComponent } from './app.component';
 import { ViewTaskComponent } from './view-task/view-task.component';
-import { TaskListComponent } from './task-list/task-list.component';
+// import { TaskListComponent } from './task-list/task-list.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { NewTaskComponent } from './new-task/new-task.component';
+import { HttpModule } from '@angular/http';
 import {TaskService} from './services/task.service';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -31,7 +32,7 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     ViewTaskComponent,
-    TaskListComponent,
+    // TaskListComponent,
     EditTaskComponent,
     NewTaskComponent,
     SuggestedPipe,
@@ -44,6 +45,7 @@ export const firebaseConfig = {
     FormsModule,
     HttpClientModule,
     routing,
+    HttpModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(firebaseConfig),
   ],

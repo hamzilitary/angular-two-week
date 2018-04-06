@@ -1,4 +1,4 @@
-<h1 class="header">Welcome To Punchstarter</h1>
+<h1 class="header">Welcome To Weather Or Not</h1>
 
 
 <h2>Activities Planned</h2>
@@ -7,12 +7,12 @@
   <option value="taskSuggested">Suggested</option>
   <option value="taskNotSuggested">Not Suggested</option>
 </select>
-<ol>
-  <li *ngFor="let task of childToDoList | suggest: filterBySuggest ">{{task.task}}
+<!-- <ol>
+  <li *ngFor="let task of childToDoList | suggest: filterBySuggest "><h4>{{childToDoList .task}}</h4>
 <input type="checkbox" [checked]="task.suggest" (click)="toggleSuggest(task, !task.suggest)"/>
     <input *ngIf="task.suggest === true" type="checkbox" checked (click)="toggleSuggest(task, false)"/>
     <input *ngIf="task.suggested === false" type="checkbox" (click)="toggleSuggest(task, true)" />
     <button (click)="viewClicked(task)">View This Task</button> <button (click)="editClicked(task)">Edit This Task</button>
 
   </li>
-</ol>
+</ol> -->
