@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { ToDo } from './models/to-do.model';
+// import { AuthenticationService } from './services/authentication.service';
+// import { AngularFireAuth } from 'angularfire2/auth'
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  // providers: [AuthenticationService, AngularFireAuth]
 })
 export class AppComponent {
   title = 'Weather Or Not';
@@ -14,8 +18,16 @@ export class AppComponent {
     new ToDo("Walk the Dog", "Take Fido around the block", "raining", 38, false)
   ];
 
+
+
   selectedViewToDo: ToDo
   selectedEditToDo: ToDo
+
+  // constructor(public authService: AuthenticationService) {
+  //   this.authService.user.subscribe(user => {
+  //     console.log(user);
+  //   });
+  // }
 
   editToDoClicked(clickedEditToDo) {
     this.selectedEditToDo = clickedEditToDo;
