@@ -10,7 +10,10 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { NewTaskComponent } from './new-task/new-task.component';
 import {TaskService} from './task.service';
-import { NavBarComponent } from './nav-bar/nav-bar.component'
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { AboutPageComponent } from './about-page/about-page.component'
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -20,12 +23,15 @@ import { NavBarComponent } from './nav-bar/nav-bar.component'
     EditTaskComponent,
     NewTaskComponent,
     SuggestedPipe,
-    NavBarComponent
+    NavBarComponent,
+    HomepageComponent,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    routing
   ],
   providers: [TaskService, HttpClient],
   bootstrap: [AppComponent]

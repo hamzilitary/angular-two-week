@@ -10,7 +10,7 @@
         <li class="nav-item"><a class="nav-link" routerLink="food">Food/Crafts</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="games">Games</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="tech">Science/Technology</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="comics">Comics/Illustration</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="about">About</a></li>
 
         <div *ngIf = "isLoggedIn">
         </div>
@@ -28,7 +28,7 @@
 </nav>
 
 
-
+<router-outlet></router-outlet>
 <app-task-list [childToDoList]="masterToDo" (viewClickSender)="viewToDoClicked($event)" (editClickSender)="editToDoClicked($event)"></app-task-list>
 <app-edit-task [childEditToDo]="selectedEditToDo" (clickedDone)="finishEditing()"></app-edit-task>
 <app-view-task [childViewToDo]="selectedViewToDo" (clickedDoneView)="finishViewing()"></app-view-task>
