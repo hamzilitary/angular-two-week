@@ -9,7 +9,8 @@ import { ViewTaskComponent } from './view-task/view-task.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { NewTaskComponent } from './new-task/new-task.component';
-import {TaskService} from './task.service'
+import {TaskService} from './task.service';
+import { NavBarComponent } from './nav-bar/nav-bar.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {TaskService} from './task.service'
     TaskListComponent,
     EditTaskComponent,
     NewTaskComponent,
-    SuggestedPipe
+    SuggestedPipe,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
