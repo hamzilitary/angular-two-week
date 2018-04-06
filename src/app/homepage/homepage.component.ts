@@ -6,43 +6,37 @@ import { FirebaseListObservable } from 'angularfire2/database';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  styleUrls: ['./homepage.component.css'],
+  providers: [TaskService]
 })
 
 
 
 export class HomepageComponent implements OnInit {
   tasks: FirebaseListObservable<any[]>;
-
-  @Input() childToDoList: ToDo[];
-  @Output() viewClickSender = new EventEmitter();
-  @Output() editClickSender = new EventEmitter();
-  filterBySuggest: string = "allTasks";
-
-
-  viewClicked(clickedToDo: ToDo){
-    this.viewClickSender.emit(clickedToDo);
-  }
-
-  editClicked(clickedToDo: ToDo) {
-    this.editClickSender.emit(clickedToDo);
-  }
-
-  onChange(optionFromMenu) {
-    this.filterBySuggest = optionFromMenu;
-  }
-
-  toggleSuggest(clickedToDo: ToDo, setSuggest: boolean) {
-    clickedToDo.suggest = setSuggest;
-    this.taskService.getTasks().subscribe((t) => console.log(t));
-  }
-  ngOnInit() {
-  this.tasks = this.taskService.getTasks();
-  }
-
-
-
+  filterBySuggest: string = "All Tasks";
+  filtered: boolean = false;
   constructor(private taskService:TaskService) { }
+
+
+  ngOnInit() {
+      this.tasks = this.taskService.getTasks();
+    }
+
+
+
+    setFilterCategory(category: string) {
+        this.filterBySuggest = category;
+        this.filtered = true;
+    }
+
+    resetFilterCategory(){
+      this.filterBySuggest = 'All Tasks'
+      this.filtered = false;
+    }
+
+
+
 
 
 

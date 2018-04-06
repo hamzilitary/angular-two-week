@@ -2,13 +2,33 @@
 
 
 <h2>Activities Planned</h2>
+<h2>{{filterBySuggest}}</h2>
 <select (change)="onChange($event.target.value)">
   <option value="allTasks" selected="selected">All Tasks</option>
   <option value="taskSuggested">Suggested</option>
   <option value="taskNotSuggested">Not Suggested</option>
 </select>
+
+
+<div *ngIf = "allTasks">
+  <div *ngFor="let task of tasks | async">
+    <div class="card">
+
+
+        <div class="card-body">
+          <h3><em>{{tasks.task}}</em> - {{tasks.task}}</h3>
+
+
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+
 <!-- <ol>
-  <li *ngFor="let task of childToDoList | suggest: filterBySuggest "><h4>{{childToDoList .task}}</h4>
+  <li *ngFor="let task of tasks | suggest: filterBySuggest "><h4>{{tasks.task}}</h4>
 <input type="checkbox" [checked]="task.suggest" (click)="toggleSuggest(task, !task.suggest)"/>
     <input *ngIf="task.suggest === true" type="checkbox" checked (click)="toggleSuggest(task, false)"/>
     <input *ngIf="task.suggested === false" type="checkbox" (click)="toggleSuggest(task, true)" />

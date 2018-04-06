@@ -1,11 +1,17 @@
-<form class="newTask" action="index.html" method="post">
+<div class="card">
+  <div class="card-body">
+
+
+  <form class="newTask" action="index.html" method="post">
   <label for="task-form"></label>
   <input #newTask placeholder="activity">
   <input #newDescription placeholder="description">
   <input #newConditions placeholder="conditions">
   <input #newTemperature placeholder="temperature">
   <input #newSuggest placeholder="suggest override">
-  <button (click)="addTask(newTask.value, newDescription.value, newConditions.value, newTemperature.value, newSuggest.value); newTask.value=''; newDescription.value=''; newConditions.value=''; newTemperature.value=''; newSuggest.value='';">Add Task</button>
+  <button (click)="addTask(newTask.value, newDescription.value, newConditions.value, newTemperature.value, newSuggest.value); newTask.value=''; newDescription.value=''; newConditions.value=''; newTemperature.value=''; newSuggest.value='';" routerLink=''>Add Task</button>
 
 
 </form>
+</div>
+</div>
