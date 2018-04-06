@@ -1,1 +1,18 @@
-<h2>Welcome to Weather Or Not</h2>
+<h1 class="header">Welcome To Punchstarter</h1>
+
+
+<h2>Activities Planned</h2>
+<select (change)="onChange($event.target.value)">
+  <option value="allTasks" selected="selected">All Tasks</option>
+  <option value="taskSuggested">Suggested</option>
+  <option value="taskNotSuggested">Not Suggested</option>
+</select>
+<ol>
+  <li *ngFor="let task of childToDoList | suggest: filterBySuggest ">{{task.task}}
+<input type="checkbox" [checked]="task.suggest" (click)="toggleSuggest(task, !task.suggest)"/>
+    <input *ngIf="task.suggest === true" type="checkbox" checked (click)="toggleSuggest(task, false)"/>
+    <input *ngIf="task.suggested === false" type="checkbox" (click)="toggleSuggest(task, true)" />
+    <button (click)="viewClicked(task)">View This Task</button> <button (click)="editClicked(task)">Edit This Task</button>
+
+  </li>
+</ol>
