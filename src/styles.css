@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background: url('https://i.ytimg.com/vi/v7soFZCMKJc/maxresdefault.jpg');
+  background: url('https://ak6.picdn.net/shutterstock/videos/13107836/thumb/1.jpg');
   background-repeat: no-repeat;
+  background-size: cover;
+  max-width:
 
 
 }
@@ -13,10 +15,13 @@ h1 {
 
 h3 {
   text-align: center;
+  color: white;
 
 }
 p {
   text-align: center;
+  color: white;
+
 }
 
 h2 {

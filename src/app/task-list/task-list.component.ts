@@ -1,6 +1,8 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { ToDo } from '../models/to-do.model';
-import {TaskService} from '../task.service'
+import {TaskService} from '../services/task.service'
+import { FirebaseListObservable } from 'angularfire2/database';
+
 
 
 @Component({
@@ -8,7 +10,9 @@ import {TaskService} from '../task.service'
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
-export class TaskListComponent {
+export class TaskListComponent implements OnInit {
+  tasks: FirebaseListObservable<any[]>;
+
   @Input() childToDoList: ToDo[];
   @Output() viewClickSender = new EventEmitter();
   @Output() editClickSender = new EventEmitter();
@@ -29,12 +33,15 @@ export class TaskListComponent {
 
   toggleSuggest(clickedToDo: ToDo, setSuggest: boolean) {
     clickedToDo.suggest = setSuggest;
-    this.svc.getTasks().subscribe((t) => console.log(t));
+    this.taskService.getTasks().subscribe((t) => console.log(t));
+  }
+  ngOnInit() {
+  this.tasks = this.taskService.getTasks();
   }
 
 
 
-  constructor(private svc:TaskService) { }
+  constructor(private taskService:TaskService) { }
 
 
 
