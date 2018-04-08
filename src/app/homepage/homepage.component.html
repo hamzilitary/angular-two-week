@@ -2,37 +2,38 @@
 
 
 <h2>Activities Planned</h2>
-<h2>{{filterBySuggest}}</h2>
-<select (change)="onChange($event.target.value)">
-  <option value="allTasks" selected="selected">All Tasks</option>
-  <option value="taskSuggested">Suggested</option>
-  <option value="taskNotSuggested">Not Suggested</option>
-</select>
 
 
-<div *ngIf = "allTasks">
+<div *ngIf = "!filtered">
+  <div class="form-group header">
+    <select #newCategory>
+      <option value="All">All</option>
+      <option value="Suggested">Suggested</option>
+      <option value="NotSuggested">Not Suggested</option>
+    </select>
+  </div>
+  <button class="btn btn-dark header" (click)="setFilterCategory(newCategory.value)">Filter Categories</button>
+</div>
+<div *ngIf = "filtered">
+  <button class="btn btn-dark header" (click)="resetFilterCategory()">All Tasks</button>
+</div>
+<div *ngIf = "!filtered">
   <div *ngFor="let task of tasks | async">
     <div class="card">
-
-
-        <div class="card-body">
-          <h3><em>{{tasks.task}}</em> - {{tasks.task}}</h3>
-
-
-        </div>
-
+      <div class="card-body">
+        <h3><em>{{task.task}}</em> - {{task.description}}</h3>
+        <button (click)="goToDetail(project)" type="button" name="button">View Task</button>
+      </div>
     </div>
   </div>
 </div>
-
-
-
-<!-- <ol>
-  <li *ngFor="let task of tasks | suggest: filterBySuggest "><h4>{{tasks.task}}</h4>
-<input type="checkbox" [checked]="task.suggest" (click)="toggleSuggest(task, !task.suggest)"/>
-    <input *ngIf="task.suggest === true" type="checkbox" checked (click)="toggleSuggest(task, false)"/>
-    <input *ngIf="task.suggested === false" type="checkbox" (click)="toggleSuggest(task, true)" />
-    <button (click)="viewClicked(task)">View This Task</button> <button (click)="editClicked(task)">Edit This Task</button>
-
-  </li>
-</ol> -->
+<div *ngIf = "filtered">
+  <div *ngFor= "let task of tasks | async">
+    <div *ngIf = "task.suggest === filterBySuggest">
+      <div class="card">
+        <h3><em>{{task.task}}</em> - {{task.description}}</h3>
+        <button (click)="goToDetail(project)" type="button" name="button">View Project</button>
+      </div>
+    </div>
+  </div>
+</div>

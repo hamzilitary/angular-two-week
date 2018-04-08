@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { ToDo } from '../models/to-do.model';
 import {TaskService} from '../services/task.service'
 import { FirebaseListObservable } from 'angularfire2/database';
@@ -25,8 +25,8 @@ export class HomepageComponent implements OnInit {
 
 
 
-    setFilterCategory(category: string) {
-        this.filterBySuggest = category;
+    setFilterCategory(suggest: string) {
+        this.filterBySuggest = suggest;
         this.filtered = true;
     }
 

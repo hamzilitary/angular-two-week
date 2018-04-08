@@ -17,4 +17,9 @@ getTasks(){
 addTask(newTask: ToDo) {
     this.tasks.push(newTask);
   }
+
+getTaskById(taskId: string){
+  return this.database.object('task/' + taskId);
+}
+
 }
