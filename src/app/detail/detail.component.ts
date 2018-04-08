@@ -17,7 +17,13 @@ export class DetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private location: Location, private taskService: TaskService) { }
 
   ngOnInit() {
-    
+    this.route.params.forEach((urlParameters) => {
+      this.taskId = urlParameters['id'];
+    });
+    this.taskService.getTaskById(this.taskId).subscribe(dataLastEmittedFromObserver => {this.taskToDisplay = dataLastEmittedFromObserver;
+    });
+
+
   }
 
 }
