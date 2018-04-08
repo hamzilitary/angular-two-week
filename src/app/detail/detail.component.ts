@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TaskService} from '../services/task.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
+import { ToDo } from '../models/to-do.model';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-detail',

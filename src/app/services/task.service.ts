@@ -12,14 +12,14 @@ export class TaskService {
 }
 
 getTasks(){
-  return this.tasks
+  return this.tasks;
 }
 addTask(newTask: ToDo) {
     this.tasks.push(newTask);
   }
 
 getTaskById(taskId: string){
-  return this.database.object('task/' + taskId);
+  return this.database.object('tasks/' + taskId);
 }
 
 }
