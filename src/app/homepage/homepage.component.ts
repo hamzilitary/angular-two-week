@@ -19,7 +19,15 @@ export class HomepageComponent implements OnInit {
   filtered: boolean = false;
   constructor(private taskService:TaskService, private router: Router) { }
 
-
+  get filteredTasks() {
+    if (!this.filtered) {
+      return this.tasks;
+    }
+    let filterFunc = function(task) {
+      return (task.suggest && this.filterBySuggest === 'Suggested') || !task.suggest
+    };
+    return this.tasks.flatMap(t => t).filter<any>(filterFunc);
+  }
   ngOnInit() {
       this.tasks = this.taskService.getTasks();
     }

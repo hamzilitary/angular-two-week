@@ -29,7 +29,7 @@
 </div>
 <div *ngIf = "filtered">
   <div *ngFor= "let task of tasks | async">
-    <div *ngIf = "task.suggest === filterBySuggest">
+    <div *ngIf = "task.suggest === (filterBySuggest === 'Suggested')">
       <div class="card">
         <h3><em>{{task.task}}</em> - {{task.description}}</h3>
         <button (click)="goToDetail(project)" type="button" name="button">View Project</button>

@@ -9,14 +9,14 @@ import { TaskService } from '../services/task.service';
   providers: [TaskService]
 })
 export class NewTaskComponent implements OnInit {
-
+  suggest:boolean = true;
   constructor(private taskService: TaskService) { }
 
-  addTask(task: string, description: string, conditions: string, temperature: string, suggest: string) {
+  addTask(task: string, description: string, conditions: string, temperature: string, suggest: boolean) {
     let newToDo: ToDo = new ToDo(task, description, conditions, parseInt(temperature))
-    if (suggest = "true"){
-      newToDo.suggest = true;
-    }
+
+      newToDo.suggest = this.suggest;
+
     // this.taskService.create(ToDo);
     // this.createdSender.emit(newToDo);
     this.taskService.addTask(newToDo);

@@ -16,6 +16,7 @@ getTasks(){
 }
 addTask(newTask: ToDo) {
     this.tasks.push(newTask);
+    console.log(newTask.$key);
   }
 
 getTaskById(taskId: string){
