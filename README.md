@@ -9,6 +9,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Deployment
+
+To Go to the site that is deployed go to https://weather-or-not-7f121.firebaseapp.com/ .
+
+
+
 ## Specifications/Current Features
 
 * _Create components using Angular_
